@@ -9,7 +9,7 @@ a {
 }
 .home {
   display: flex;
-  /* margin-top: 4.7rem; */
+  margin-top: 5rem;
 }
 .productContainer {
   display: flex;
@@ -61,6 +61,11 @@ a {
 }
 .t {
   margin-top: 2rem;
+}
+.c {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 @media (min-width: 650px) {
   .cartN {

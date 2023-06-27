@@ -19,7 +19,7 @@ const Header = () => {
   } = useContext(NewContext);
   return (
     <div>
-      <Navbar bg="secondary" style={{ height: 80 }}>
+      <Navbar bg="secondary" style={{ height: 80 }} fixed="top">
         <Container>
           <Navbar.Brand>
             <Link to="/">

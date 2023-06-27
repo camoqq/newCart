@@ -1,9 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import Cart from "./comps/Cart";
+import React, { lazy, Suspense } from "react";
 import Header from "./comps/Header";
 import Context from "./comps/Context";
-import Home from "./comps/Home";
+//import Cart from "./comps/Cart";
+// import Home from "./comps/Home";
+
+const Home = lazy(() => import("./comps/Home"));
+const Cart = lazy(() => import("./comps/Cart"));
 
 function App() {
   return (
@@ -11,10 +14,12 @@ function App() {
       <Context>
         <BrowserRouter>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} exact />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Routes>
+              <Route path="/" element={<Home />} exact />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </Context>
     </div>
